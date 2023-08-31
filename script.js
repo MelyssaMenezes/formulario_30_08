@@ -26,27 +26,31 @@ document.addEventListener('submit', function(event){
 
 });
 
+
 function saveCustomer(){
     console.log('Funcao saveCustomer executado!');
+
+    // pegando os edits(campos) digitados
+    const edtNameValue = edtName.value;
+    const edtAddressValue = edtAddress.value;
+    const edtAgeValue = edtAge.value;
+
+
+    console.log(edtNameValue, edtAddressValue, edtAgeValue);
+
+    // customer - cliente
+    const customer = {
+        name: edtNameValue,
+        address: edtAddressValue,
+        age: edtAgeValue
+    }
+
+    /*Adiciona(push) objeto (customer) na lista de clientes
+    (array customerList)*/
+    customerList.push(customer);
+
+    console.log(customerList);
+
 }
 
-// pegando os edits(campos) digitados
-const edtNameValue = edtName.value;
-const edtAddressValue = edtAddress.value;
-const edtAgeValue = edtAge.value;
 
-
-console.log(edtNameValue, edtAddressValue, edtAgeValue);
-
-// customer - cliente
-const customer = {
-    name: edtNameValue,
-    address: edtAddressValue,
-    age: edtAge
-}
-
-/*Adiciona(push) objeto (customer) na lista de clientes
-(array customerList)*/
-customerList.push(customer);
-
-console.log(customerList);
