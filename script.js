@@ -17,6 +17,11 @@ const edtName = document.querySelector('#fieldName');
 const edtAddress = document.querySelector('#fieldAddress');
 const edtAge = document.querySelector('#fieldAge');
 
+
+// obter o elemento button(cancelar) q tem no html
+const cancelButton = document.querySelector('#cancelButton');
+
+
 //chamando a funcao clearForm
 clearForm();
 
@@ -36,8 +41,21 @@ document.addEventListener('submit', function(event){
     /* chamando a funcao para limpar o formulario e por o foco no 
      campo do nome */
     clearForm();
-
 });
+
+
+/* pegando a variavel cancelButton e colocar ela pra esperar o 
+// a funcao vai ocorrer quando o botao de cancelar for clicado
+evento(.addEventListener) acontecer(click), para depois 
+executar a funcao */
+cancelButton.addEventListener('click', function(){
+    const confirmation = confirm('Tem certeza que deseja cancelar?');
+    if(confirmation) {
+        clearForm();
+        console.log('Cancelando edicao');
+    }
+})
+
 
 
 function saveCustomer(){
@@ -73,5 +91,6 @@ function clearForm() {
     /* focus vai deixar o cursor no campo nome depois de recarregar
      a pagina ou salvar os dados */
 }
+
 
 
